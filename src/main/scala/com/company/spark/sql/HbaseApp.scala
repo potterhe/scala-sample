@@ -36,6 +36,12 @@ object HBaseRecord {
   }
 }
 
+/*
+spark-submit \
+  --class "com.company.spark.sql.HbaseApp" \
+  --master local[4] \
+  target/scala-sample-0.1-SNAPSHOT.jar
+ */
 object HbaseApp {
 
   def cat = s"""{
