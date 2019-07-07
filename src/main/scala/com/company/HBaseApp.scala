@@ -12,7 +12,7 @@ object HBaseApp {
 
   def main(args: Array[String]): Unit = {
     val conf = HBaseConfiguration.create()
-    conf.set("hbase.zookeeper.quorum", "sparkmaster1");
+    conf.set("hbase.zookeeper.quorum", "localhost:2181");
     val conn = ConnectionFactory.createConnection(conf)
     val admin = conn.getAdmin
     val wetagTable = TableName.valueOf("wetag")

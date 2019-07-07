@@ -142,7 +142,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>com.company.App</mainClass>
+              <mainClass>com.company.HBaseApp</mainClass>
             </manifest>
           </archive>
         </configuration>
