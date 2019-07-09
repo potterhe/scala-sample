@@ -9,6 +9,12 @@ import org.apache.hadoop.hbase.TableName
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 
+/*
+spark-submit \
+  --class "com.company.spark.HBaseBulkPutExample" \
+  --master local[4] \
+  target/scala-sample-0.1-SNAPSHOT-jar-with-dependencies.jar tableName columnFamily
+ */
 object HBaseBulkPutExample {
   def main(args: Array[String]) {
     if (args.length < 2) {
