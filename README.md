@@ -8,4 +8,4 @@ https://github.com/davidB/scala-archetype-simple
 
 http://www.voidcn.com/article/p-enrpcfmw-ko.html
 
-mvn test -Dtest=com.company.quickstart.HelloWorldTes
+mvn test -Dtest=com.company.quickstart.HelloWorldTest
