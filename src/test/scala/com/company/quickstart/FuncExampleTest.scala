@@ -65,4 +65,14 @@ class FuncExampleTest {
     assertTrue(r > 0.5)
   }
 
+  @Test
+  def testApplyAndUpdate() = {
+    ApplyStub(1) = "a"
+    assertEquals(ApplyStub(1), "a")
+    ApplyStub(2) = "b"
+    assertEquals(ApplyStub(2), "b")
+    ApplyStub.update(0, "c")
+    assertEquals(ApplyStub(0), "c")
+  }
+
 }

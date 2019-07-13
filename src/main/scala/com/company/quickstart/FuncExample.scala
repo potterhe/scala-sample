@@ -96,3 +96,15 @@ object TailRecurisive {
   }
 
 }
+
+object ApplyStub {
+  var v: Array[String] = new Array[String](3)
+  def apply(i: Int) = {
+    v(i)
+  }
+
+  def update(i:Int, s:String) = {
+    v(i) = s
+  }
+
+}
