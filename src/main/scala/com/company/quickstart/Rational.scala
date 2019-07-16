@@ -15,11 +15,11 @@ class Rational(n:Int, d:Int) {
     if (b == 0) a else gcd(b, a % b)
   }
 
-  def add(that:Rational): Rational = {
+  def +(that:Rational): Rational = {
     new Rational(numer * that.denom + denom * that.numer, denom * that.denom)
   }
 
-  def add(i:Int): Rational = {
+  def +(i:Int): Rational = {
     new Rational(numer + i * denom, denom)
   }
 
@@ -33,4 +33,8 @@ class Rational(n:Int, d:Int) {
   override def toString: String = {
     super.toString + s",$n/$d"
   }
+}
+
+object Rational {
+  implicit def intToRational(i:Int):Rational = new Rational(i)
 }

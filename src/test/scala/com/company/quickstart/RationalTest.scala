@@ -25,19 +25,22 @@ class RationalTest {
   def testAdd(): Unit = {
     val a = new Rational(1, 2)
     val b = new Rational(1, 3)
-    val c = a.add(b)
+    val c = a.+(b)
     println(a, b, c)
     assertEquals(c.numer, 5)
     assertEquals(c.denom, 6)
 
     val d = new Rational(1)
-    println(d, d.add(c))
+    println(d, d.+(c))
 
     assertEquals(new Rational(1), new Rational(1, 1))
     assertEquals(new Rational(1, 2), new Rational(2, 4))
 
-    val e = a.add(1)
+    val e = a + 1
     assertEquals(e, new Rational(3, 2))
+
+    val f = 1 + a
+    assertEquals(f, new Rational(3, 2))
   }
 
 }
