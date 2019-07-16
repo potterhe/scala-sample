@@ -19,6 +19,10 @@ class Rational(n:Int, d:Int) {
     new Rational(numer * that.denom + denom * that.numer, denom * that.denom)
   }
 
+  def add(i:Int): Rational = {
+    new Rational(numer + i * denom, denom)
+  }
+
   override def equals(obj: Any): Boolean = {
     obj match {
       case that:Rational => that.numer == numer && that.denom == denom

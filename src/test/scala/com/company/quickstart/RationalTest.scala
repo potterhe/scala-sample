@@ -35,6 +35,9 @@ class RationalTest {
 
     assertEquals(new Rational(1), new Rational(1, 1))
     assertEquals(new Rational(1, 2), new Rational(2, 4))
+
+    val e = a.add(1)
+    assertEquals(e, new Rational(3, 2))
   }
 
 }
