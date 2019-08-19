@@ -75,4 +75,13 @@ class FuncExampleTest {
     assertEquals(ApplyStub(0), "c")
   }
 
+  @Test
+  def testFuncCompose() = {
+    val r = FuncComposeAndThen.fComposeG("x")
+    assertEquals("f(g(x))", r)
+
+    val r2 = FuncComposeAndThen.gComposeF("x")
+    assertEquals("g(f(x))", r2)
+  }
+
 }

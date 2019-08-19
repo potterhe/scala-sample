@@ -108,3 +108,12 @@ object ApplyStub {
   }
 
 }
+
+object FuncComposeAndThen {
+  val fComposeG = f _ compose g _
+  val gComposeF = g _ compose f _
+  val fAndThenG = f _ andThen g _
+
+  def f(s:String) = "f(" + s + ")"
+  def g(s:String) = "g(" + s + ")"
+}
