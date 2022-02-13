@@ -36,3 +36,6 @@ Exception in thread "main" java.lang.SecurityException: Invalid signature file d
 	at sun.launcher.LauncherHelper.checkAndLoadMain(LauncherHelper.java:601)
 ```
 
+### spark自定义窗口函数
+- [实战例子|自定义一个窗口函数来计算网站的会话数](http://spark.coolplayer.net/?p=3568)
+- https://github.com/rcongiu/spark-udwf-session
