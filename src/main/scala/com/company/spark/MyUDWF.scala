@@ -1,14 +1,13 @@
 package com.company.spark
 
-import java.util.UUID
-
 import org.apache.spark.sql.{Column, Row}
 import org.apache.spark.sql.catalyst.expressions.{Add, AggregateWindowFunction, AttributeReference, Expression, If, IsNotNull, LessThanOrEqual, Literal, ScalaUDF, Subtract}
 import org.apache.spark.sql.types._
 import org.apache.spark.unsafe.types.UTF8String
 
-
-
+/**
+ * https://github.com/rcongiu/spark-udwf-session
+ */
 object MyUDWF {
   val defaultMaxSessionLengthms = 3600 * 1000
   case class SessionUDWF(timestamp:Expression, session:Expression,
@@ -45,7 +44,7 @@ object MyUDWF {
     override def prettyName: String = "makeSession"
   }
 
-  protected val  createNewSession = () => org.apache.spark.unsafe.types.UTF8String.fromString("-")
+  protected val  createNewSession = () => UTF8String.fromString("-")
 
   def calculateSession(ts:Column,sess:Column): Column = withExpr { SessionUDWF(ts.expr,sess.expr, Literal(defaultMaxSessionLengthms)) }
   def calculateSession(ts:Column,sess:Column, sessionWindow:Column): Column = withExpr { SessionUDWF(ts.expr,sess.expr, sessionWindow.expr) }
